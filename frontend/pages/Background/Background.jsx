@@ -7,7 +7,7 @@ function Background() {
             <LetterGlitch
                 glitchSpeed={50}
                 centerVignette={true}
-                outerVignette={false}
+                outerVignette={true}
                 smooth={true}
             />
         </div>
