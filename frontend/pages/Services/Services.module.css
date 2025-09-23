@@ -1,0 +1,243 @@
+.servicesContent {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.serviceCategory {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 1px solid rgba(0, 255, 0, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.categoryTitle {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #00ff00;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.methodsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.methodCard {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(0, 255, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.methodCard:hover {
+    transform: translateY(-5px);
+    border-color: rgba(0, 255, 0, 0.6);
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.methodTitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #00ff00;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.methodDescription {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.methodFeatures {
+    list-style: none;
+    padding: 0;
+}
+
+.methodFeatures li {
+    color: rgba(255, 255, 255, 0.8);
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.methodFeatures li::before {
+    content: '✓';
+    color: #00ff00;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.enterpriseGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.enterpriseCard {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    border: 1px solid rgba(0, 255, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.enterpriseCard:hover {
+    transform: translateY(-5px);
+    border-color: rgba(0, 255, 0, 0.5);
+}
+
+.enterpriseIcon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.enterpriseTitle {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #00ff00;
+    margin-bottom: 1rem;
+}
+
+.enterpriseText {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+}
+
+.specializedList {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.specializedItem {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    border-left: 4px solid #00ff00;
+    transition: all 0.3s ease;
+}
+
+.specializedItem:hover {
+    background: rgba(0, 0, 0, 0.5);
+    transform: translateX(10px);
+}
+
+.specializedTitle {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #00ff00;
+    margin-bottom: 0.5rem;
+}
+
+.specializedText {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+}
+
+.pricingSection {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 1px solid rgba(0, 255, 0, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.pricingGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.pricingCard {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    border: 1px solid rgba(0, 255, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.pricingCard:hover {
+    transform: translateY(-10px);
+    border-color: rgba(0, 255, 0, 0.6);
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.pricingTitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #00ff00;
+    margin-bottom: 1rem;
+}
+
+.pricingPrice {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+.pricingPeriod {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 2rem;
+}
+
+.pricingFeatures {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.pricingFeatures li {
+    color: rgba(255, 255, 255, 0.8);
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.pricingFeatures li::before {
+    content: '✓';
+    color: #00ff00;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+@media (max-width: 768px) {
+    .servicesContent {
+        gap: 2rem;
+    }
+    
+    .serviceCategory {
+        padding: 1.5rem;
+    }
+    
+    .methodsGrid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .enterpriseGrid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .pricingGrid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}

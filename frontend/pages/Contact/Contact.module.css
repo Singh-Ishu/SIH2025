@@ -1,0 +1,280 @@
+.contactContent {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.contactGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 2rem;
+}
+
+.contactInfo {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 1px solid rgba(0, 255, 0, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.infoTitle {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #00ff00;
+    margin-bottom: 1rem;
+}
+
+.infoText {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.contactMethods {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.contactMethod {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 0.5rem;
+    border: 1px solid rgba(0, 255, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.contactMethod:hover {
+    border-color: rgba(0, 255, 0, 0.3);
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.methodIcon {
+    font-size: 1.5rem;
+    min-width: 2rem;
+}
+
+.methodDetails {
+    flex: 1;
+}
+
+.methodTitle {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #00ff00;
+    margin-bottom: 0.25rem;
+}
+
+.methodText {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 0.25rem;
+}
+
+.methodSubtext {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.socialLinks {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1.5rem;
+}
+
+.socialTitle {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #00ff00;
+    margin-bottom: 1rem;
+}
+
+.socialIcons {
+    display: flex;
+    gap: 1rem;
+}
+
+.socialIcon {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border: 1px solid rgba(0, 255, 0, 0.2);
+    border-radius: 0.25rem;
+    transition: all 0.3s ease;
+}
+
+.socialIcon:hover {
+    color: #00ff00;
+    border-color: rgba(0, 255, 0, 0.5);
+    background: rgba(0, 255, 0, 0.1);
+}
+
+.contactForm {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 1px solid rgba(0, 255, 0, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.formTitle {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #00ff00;
+    margin-bottom: 2rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.formLabel {
+    font-size: 1rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.formInput,
+.formSelect,
+.formTextarea {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(0, 255, 0, 0.3);
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.formInput:focus,
+.formSelect:focus,
+.formTextarea:focus {
+    outline: none;
+    border-color: #00ff00;
+    background: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 0 2px rgba(0, 255, 0, 0.2);
+}
+
+.formInput::placeholder,
+.formTextarea::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.formTextarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.checkboxLabel {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+}
+
+.checkbox {
+    margin-top: 0.2rem;
+    accent-color: #00ff00;
+}
+
+.submitButton {
+    background: linear-gradient(90deg, #00ff00, #00e6b8);
+    color: #000;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.submitButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 255, 0, 0.3);
+}
+
+.additionalInfo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.infoCard {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(0, 255, 0, 0.2);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.infoCard:hover {
+    transform: translateY(-5px);
+    border-color: rgba(0, 255, 0, 0.4);
+}
+
+.cardTitle {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #00ff00;
+    margin-bottom: 0.5rem;
+}
+
+.cardText {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .contactGrid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .contactInfo,
+    .contactForm {
+        padding: 1.5rem;
+    }
+    
+    .infoTitle,
+    .formTitle {
+        font-size: 1.5rem;
+    }
+    
+    .contactMethod {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .methodIcon {
+        align-self: center;
+    }
+    
+    .socialIcons {
+        flex-wrap: wrap;
+    }
+    
+    .additionalInfo {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
