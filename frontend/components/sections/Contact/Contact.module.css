@@ -1,0 +1,262 @@
+.contact {
+    background: var(--color-bg-primary);
+    position: relative;
+}
+
+.contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(0, 255, 136, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 90% 80%, rgba(255, 0, 102, 0.03) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.contactHeader {
+    text-align: center;
+    margin-bottom: var(--spacing-3xl);
+}
+
+.sectionTitle {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: var(--spacing-md);
+}
+
+.sectionSubtitle {
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    color: var(--color-text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contactGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-3xl);
+    align-items: start;
+}
+
+.contactInfo {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+}
+
+.infoTitle {
+    font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-md);
+}
+
+.infoText {
+    font-size: clamp(1rem, 2vw, 1.1rem);
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+    margin-bottom: var(--spacing-lg);
+}
+
+.contactMethods {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.contactMethod {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-normal);
+}
+
+.contactMethod:hover {
+    transform: translateX(10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.methodIcon {
+    font-size: 2rem;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+    border-radius: var(--radius-md);
+    flex-shrink: 0;
+    filter: grayscale(1) brightness(0) invert(1);
+}
+
+.methodDetails {
+    flex: 1;
+}
+
+.methodTitle {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.methodText {
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.methodSubtext {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+}
+
+.contactForm {
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    position: sticky;
+    top: var(--spacing-xl);
+}
+
+.formTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-xl);
+    text-align: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.formRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-md);
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.formLabel {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+}
+
+.formInput,
+.formSelect,
+.formTextarea {
+    padding: var(--spacing-md);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-md);
+    color: var(--color-text-primary);
+    font-size: 1rem;
+    transition: all var(--transition-normal);
+    backdrop-filter: blur(10px);
+}
+
+.formInput:focus,
+.formSelect:focus,
+.formTextarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 0 3px rgba(0, 255, 136, 0.1);
+}
+
+.formInput::placeholder,
+.formTextarea::placeholder {
+    color: var(--color-text-muted);
+}
+
+.formTextarea {
+    resize: vertical;
+    min-height: 120px;
+    font-family: inherit;
+}
+
+.checkboxLabel {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+}
+
+.checkbox {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--color-primary);
+}
+
+.submitButton {
+    padding: var(--spacing-md) var(--spacing-xl);
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+    color: var(--color-bg-primary);
+    border: none;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    box-shadow: 0 4px 20px rgba(0, 255, 136, 0.3);
+    margin-top: var(--spacing-md);
+}
+
+.submitButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 255, 136, 0.4);
+    background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary));
+}
+
+@media (max-width: 1024px) {
+    .contactGrid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+    }
+    
+    .contactForm {
+        position: static;
+    }
+}
+
+@media (max-width: 768px) {
+    .formRow {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
+    .contactMethod {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--spacing-md);
+    }
+    
+    .methodIcon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+    
+    .contactForm {
+        padding: var(--spacing-lg);
+    }
+}

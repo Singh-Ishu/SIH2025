@@ -1,0 +1,282 @@
+.services {
+    background: var(--color-bg-secondary);
+    position: relative;
+}
+
+.services::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 30% 20%, rgba(255, 0, 102, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 70% 80%, rgba(0, 255, 136, 0.03) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.servicesHeader {
+    text-align: center;
+    margin-bottom: var(--spacing-3xl);
+}
+
+.sectionTitle {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: var(--spacing-md);
+}
+
+.sectionSubtitle {
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    color: var(--color-text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.methodsSection {
+    margin-bottom: var(--spacing-3xl);
+}
+
+.subsectionTitle {
+    font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+    font-weight: 700;
+    color: var(--color-text-primary);
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.methodsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.methodCard {
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.methodCard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+}
+
+.methodCard:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+}
+
+.methodHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.methodTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: var(--font-mono);
+    color: var(--color-text-primary);
+}
+
+.methodBadge {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+    color: var(--color-bg-primary);
+    border-radius: var(--radius-sm);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.methodDescription {
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-lg);
+}
+
+.methodFeatures {
+    list-style: none;
+    padding: 0;
+}
+
+.methodFeatures li {
+    padding: var(--spacing-xs) 0;
+    color: var(--color-text-secondary);
+    position: relative;
+    padding-left: var(--spacing-lg);
+}
+
+.methodFeatures li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    font-weight: bold;
+}
+
+.pricingSection {
+    margin-top: var(--spacing-3xl);
+}
+
+.pricingGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.pricingCard {
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.pricingCard:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+}
+
+.featured {
+    transform: scale(1.05);
+    border: 2px solid var(--color-primary);
+}
+
+.featured:hover {
+    transform: scale(1.05) translateY(-8px);
+}
+
+.featuredBadge {
+    position: absolute;
+    top: var(--spacing-md);
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+    color: var(--color-bg-primary);
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--radius-sm);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.pricingHeader {
+    margin-bottom: var(--spacing-xl);
+    padding-top: var(--spacing-lg);
+}
+
+.pricingTitle {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-md);
+}
+
+.pricingPrice {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 900;
+    font-family: var(--font-mono);
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: var(--spacing-xs);
+}
+
+.pricingPeriod {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+}
+
+.pricingFeatures {
+    list-style: none;
+    padding: 0;
+    margin-bottom: var(--spacing-xl);
+}
+
+.pricingFeatures li {
+    padding: var(--spacing-sm) 0;
+    color: var(--color-text-secondary);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.pricingFeatures li:last-child {
+    border-bottom: none;
+}
+
+.pricingButton {
+    width: 100%;
+    padding: var(--spacing-md) var(--spacing-lg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    background: var(--glass-bg);
+    color: var(--color-text-primary);
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    backdrop-filter: var(--glass-backdrop);
+}
+
+.pricingButton:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.featuredButton {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+    color: var(--color-bg-primary);
+    border: none;
+    box-shadow: 0 4px 20px rgba(0, 255, 136, 0.3);
+}
+
+.featuredButton:hover {
+    box-shadow: 0 8px 30px rgba(0, 255, 136, 0.4);
+    background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary));
+}
+
+@media (max-width: 768px) {
+    .methodsGrid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
+    .pricingGrid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
+    .featured {
+        transform: none;
+    }
+    
+    .featured:hover {
+        transform: translateY(-8px);
+    }
+    
+    .methodCard,
+    .pricingCard {
+        padding: var(--spacing-lg);
+    }
+}

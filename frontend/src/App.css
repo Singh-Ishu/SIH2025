@@ -1,0 +1,111 @@
+.App {
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.main-content {
+    position: relative;
+    z-index: 1;
+}
+
+/* Smooth scrolling enhancement */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--color-primary), var(--color-accent));
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, var(--color-primary-dark), var(--color-primary));
+}
+
+/* Selection styles */
+::selection {
+    background: rgba(0, 255, 136, 0.2);
+    color: var(--color-text-primary);
+}
+
+::-moz-selection {
+    background: rgba(0, 255, 136, 0.2);
+    color: var(--color-text-primary);
+}
+
+/* Focus styles for accessibility */
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+/* Loading animation for images */
+img {
+    transition: opacity var(--transition-normal);
+}
+
+img[loading="lazy"] {
+    opacity: 0;
+}
+
+img[loading="lazy"].loaded {
+    opacity: 1;
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    :root {
+        --color-text-primary: #ffffff;
+        --color-text-secondary: #e0e0e0;
+        --glass-bg: rgba(255, 255, 255, 0.1);
+        --glass-border: rgba(255, 255, 255, 0.3);
+    }
+}
+
+/* Print styles */
+@media print {
+    .navigation,
+    button,
+    .scroll-indicator {
+        display: none !important;
+    }
+    
+    .section {
+        page-break-inside: avoid;
+        padding: 1rem 0;
+    }
+    
+    .glass,
+    .glass-strong {
+        background: white !important;
+        color: black !important;
+        border: 1px solid #ccc !important;
+        box-shadow: none !important;
+        backdrop-filter: none !important;
+    }
+}

@@ -1,0 +1,334 @@
+.technology {
+    background: linear-gradient(180deg, var(--color-bg-secondary) 0%, var(--color-bg-primary) 100%);
+    position: relative;
+}
+
+.technology::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 80% 20%, rgba(0, 204, 255, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 20% 80%, rgba(0, 255, 136, 0.03) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.technologyHeader {
+    text-align: center;
+    margin-bottom: var(--spacing-3xl);
+}
+
+.sectionTitle {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--color-accent), var(--color-primary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: var(--spacing-md);
+}
+
+.sectionSubtitle {
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    color: var(--color-text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.heroSection {
+    margin-bottom: var(--spacing-3xl);
+}
+
+.heroCard {
+    padding: var(--spacing-3xl);
+    border-radius: var(--radius-xl);
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.heroCard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-accent), var(--color-primary));
+}
+
+.heroTitle {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 900;
+    font-family: var(--font-mono);
+    background: linear-gradient(135deg, var(--color-accent), var(--color-primary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: var(--spacing-sm);
+}
+
+.heroSubtitle {
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-lg);
+    font-weight: 500;
+}
+
+.heroDescription {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+    margin-bottom: var(--spacing-xl);
+}
+
+.statusBadge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background: linear-gradient(135deg, var(--color-accent), var(--color-primary));
+    color: var(--color-bg-primary);
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.statusDot {
+    width: 8px;
+    height: 8px;
+    background: var(--color-bg-primary);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.rustSection {
+    margin-bottom: var(--spacing-3xl);
+}
+
+.rustIntro {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.rustDescription {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.subsectionTitle {
+    font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+    font-weight: 700;
+    color: var(--color-text-primary);
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.rustBenefits {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.benefitCard {
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    transition: all var(--transition-normal);
+    position: relative;
+}
+
+.benefitCard:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+}
+
+.benefitIcon {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-md);
+    filter: grayscale(1) brightness(0) invert(1);
+    opacity: 0.8;
+}
+
+.benefitTitle {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.benefitText {
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-md);
+}
+
+.benefitDetails {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.benefitDetails span {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    padding-left: var(--spacing-sm);
+    position: relative;
+}
+
+.benefitDetails span::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+.roadmapSection {
+    margin-bottom: var(--spacing-3xl);
+}
+
+.roadmapTimeline {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.roadmapTimeline::before {
+    content: '';
+    position: absolute;
+    left: 30px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, var(--color-primary), var(--color-accent));
+}
+
+.timelineItem {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: var(--spacing-xl);
+    position: relative;
+}
+
+.timelineMarker {
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+    border-radius: 50%;
+    margin-right: var(--spacing-lg);
+    margin-top: var(--spacing-sm);
+    position: relative;
+    z-index: 2;
+    flex-shrink: 0;
+}
+
+.timelineContent {
+    flex: 1;
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-normal);
+}
+
+.timelineContent:hover {
+    transform: translateX(10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.timelineTitle {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.timelineText {
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+}
+
+.ctaSection {
+    text-align: center;
+}
+
+.ctaCard {
+    padding: var(--spacing-3xl);
+    border-radius: var(--radius-xl);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.ctaTitle {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-lg);
+}
+
+.ctaText {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+    margin-bottom: var(--spacing-xl);
+}
+
+.ctaButton {
+    padding: var(--spacing-md) var(--spacing-xl);
+    background: linear-gradient(135deg, var(--color-accent), var(--color-primary));
+    color: var(--color-bg-primary);
+    border: none;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    box-shadow: 0 4px 20px rgba(0, 204, 255, 0.3);
+}
+
+.ctaButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 204, 255, 0.4);
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+}
+
+@media (max-width: 768px) {
+    .rustBenefits {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
+    .roadmapTimeline::before {
+        left: 15px;
+    }
+    
+    .timelineMarker {
+        width: 15px;
+        height: 15px;
+        margin-right: var(--spacing-md);
+    }
+    
+    .timelineContent {
+        padding: var(--spacing-md);
+    }
+    
+    .heroCard,
+    .ctaCard {
+        padding: var(--spacing-xl);
+    }
+}
