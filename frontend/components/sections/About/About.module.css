@@ -345,6 +345,11 @@
         gap: var(--spacing-md);
     }
     
+    .marketCards {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
     .featuresGrid {
         grid-template-columns: 1fr;
         gap: var(--spacing-md);
@@ -352,7 +357,21 @@
     
     .statCard,
     .featureCard,
+    .marketCard,
     .teamContent {
         padding: var(--spacing-lg);
+    }
+    
+    .projectionCard {
+        padding: var(--spacing-xl);
+    }
+    
+    .counterContainer {
+        flex-direction: column;
+        gap: var(--spacing-xs);
+    }
+    
+    .unit {
+        margin-left: 0;
     }
 }
