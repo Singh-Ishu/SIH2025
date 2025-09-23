@@ -134,6 +134,7 @@ function Technology() {
                             <p className={styles.featureText">
                                 Simultaneously wipe multiple drives connected to the same 
                                 system with independent progress tracking.
+                            }
                             </p>
                         </div>
                         <div className={styles.featureItem}>
@@ -141,6 +142,7 @@ function Technology() {
                             <p className={styles.featureText">
                                 Advanced algorithms to handle damaged sectors and ensure 
                                 complete wiping even on failing drives.
+                            }
                             </p>
                         </div>
                         <div className={styles.featureItem}>
@@ -148,6 +150,7 @@ function Technology() {
                             <p className={styles.featureText">
                                 Pre-configured wiping profiles for different compliance 
                                 standards (DoD, NIST, GDPR, etc.).
+                            }
                             </p>
                         </div>
                     </div>
@@ -209,6 +212,7 @@ function Technology() {
                     <button className={styles.ctaButton}>Request Beta Access</button>
                 </div>
             </div>
+        }
         </PageLayout>
     );
 }
