@@ -1,0 +1,53 @@
+.certCard {
+    padding: var(--spacing-xl);
+    text-align: center;
+}
+
+.certCard::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(0, 255, 136, 0.1), transparent);
+    transform: rotate(45deg);
+    transition: all var(--transition-slow);
+    opacity: 0;
+}
+
+.certCard:hover::after {
+    opacity: 1;
+    animation: shimmer 1.5s ease-in-out;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}
+
+.badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+    color: var(--color-bg-primary);
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--radius-full);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: var(--spacing-md);
+}
+
+.title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.description {
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+}

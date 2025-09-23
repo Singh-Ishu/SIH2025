@@ -1,5 +1,8 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import { SectionHeader, Grid, Card } from "../../shared";
+import { MethodCard, ProcessStep } from "./components";
+import { methodsData, processSteps } from "../../../utils/data";
 import styles from "./Services.module.css";
 
 function Services() {
@@ -37,124 +40,69 @@ function Services() {
         return () => ctx.revert();
     }, []);
 
+    const complianceData = [
+        {
+            icon: "🇮🇳",
+            title: "Indian IT Act 2000",
+            description: "Fully compliant with Indian Information Technology Act and Digital Personal Data Protection Act 2023 requirements."
+        },
+        {
+            icon: "🏥",
+            title: "HIPAA Compliant",
+            description: "Meets Healthcare Insurance Portability and Accountability Act standards for medical data destruction."
+        },
+        {
+            icon: "🌍",
+            title: "GDPR Ready",
+            description: "European General Data Protection Regulation compliant with \"Right to Erasure\" implementation."
+        },
+        {
+            icon: "📊",
+            title: "SOX Compliant",
+            description: "Sarbanes-Oxley Act compliant for financial data destruction and audit trail requirements."
+        }
+    ];
+
     return (
         <section id="services" className={`${styles.services} section`} ref={sectionRef}>
             <div className="container">
-                <div className={styles.servicesHeader}>
-                    <h2 className={styles.sectionTitle}>Our Services</h2>
-                    <p className={styles.sectionSubtitle}>
-                        Comprehensive data destruction solutions for every need
-                    </p>
-                </div>
+                <SectionHeader 
+                    title="Our Services"
+                    subtitle="Comprehensive data destruction solutions for every need"
+                />
 
                 <div className={styles.methodsSection}>
                     <h3 className={styles.subsectionTitle}>Data Wiping Methods</h3>
-                    <div className={styles.methodsGrid}>
-                        <div className={`${styles.methodCard} glass`}>
-                            <div className={styles.methodHeader}>
-                                <h4 className={styles.methodTitle}>Clean</h4>
-                                <div className={styles.methodBadge}>Standard</div>
-                            </div>
-                            <p className={styles.methodDescription}>
-                                Standard secure deletion using DoD 5220.22-M protocols. Perfect for 
-                                routine data cleanup and file removal with 3-pass overwriting.
-                            </p>
-                            <ul className={styles.methodFeatures}>
-                                <li>3-pass overwrite algorithm</li>
-                                <li>Suitable for personal use</li>
-                                <li>Fast processing time</li>
-                                <li>Basic compliance standards</li>
-                            </ul>
-                        </div>
-                        
-                        <div className={`${styles.methodCard} glass`}>
-                            <div className={styles.methodHeader}>
-                                <h4 className={styles.methodTitle}>Purge</h4>
-                                <div className={styles.methodBadge}>Advanced</div>
-                            </div>
-                            <p className={styles.methodDescription}>
-                                Advanced multi-pass wiping with cryptographic randomization. 
-                                Ideal for sensitive corporate data requiring higher security levels.
-                            </p>
-                            <ul className={styles.methodFeatures}>
-                                <li>7-pass overwrite with random data</li>
-                                <li>Cryptographic verification</li>
-                                <li>Enterprise-grade security</li>
-                                <li>GDPR & HIPAA compliant</li>
-                            </ul>
-                        </div>
-                        
-                        <div className={`${styles.methodCard} glass`}>
-                            <div className={styles.methodHeader}>
-                                <h4 className={styles.methodTitle}>Exterminate</h4>
-                                <div className={styles.methodBadge}>Military</div>
-                            </div>
-                            <p className={styles.methodDescription}>
-                                Military-grade destruction with 35-pass Gutmann method plus 
-                                hardware-level secure erase commands. Maximum security guaranteed.
-                            </p>
-                            <ul className={styles.methodFeatures}>
-                                <li>35-pass Gutmann algorithm</li>
-                                <li>Hardware secure erase</li>
-                                <li>Military & government grade</li>
-                                <li>Forensically unrecoverable</li>
-                            </ul>
-                        </div>
+                    <Grid minWidth="320px">
+                        {methodsData.map((method, index) => (
+                            <MethodCard key={index} {...method} />
+                        ))}
+                    </Grid>
+                </div>
+
+                <div className={styles.complianceSection}>
+                    <h3 className={styles.subsectionTitle}>Compliance & Certifications</h3>
+                    <Grid minWidth="280px">
+                        {complianceData.map((compliance, index) => (
+                            <Card key={index} className={styles.complianceCard}>
+                                <div className={styles.complianceIcon}>{compliance.icon}</div>
+                                <h4 className={styles.complianceTitle}>{compliance.title}</h4>
+                                <p className={styles.complianceText}>{compliance.description}</p>
+                            </Card>
+                        ))}
+                    </Grid>
+                </div>
+
+                <div className={styles.processSection}>
+                    <h3 className={styles.subsectionTitle}>Our Process</h3>
+                    <div className={styles.processSteps}>
+                        {processSteps.map((step, index) => (
+                            <ProcessStep key={index} {...step} />
+                        ))}
                     </div>
                 </div>
 
-                <div className={styles.pricingSection}>
-                    <h3 className={styles.subsectionTitle}>Service Packages</h3>
-                    <div className={styles.pricingGrid}>
-                        <div className={`${styles.pricingCard} glass`}>
-                            <div className={styles.pricingHeader}>
-                                <h4 className={styles.pricingTitle}>Individual</h4>
-                                <div className={styles.pricingPrice}>₹999</div>
-                                <div className={styles.pricingPeriod}>per device</div>
-                            </div>
-                            <ul className={styles.pricingFeatures}>
-                                <li>Single device wiping</li>
-                                <li>Clean or Purge methods</li>
-                                <li>Basic certificate</li>
-                                <li>Email support</li>
-                            </ul>
-                            <button className={styles.pricingButton}>Get Started</button>
-                        </div>
-                        
-                        <div className={`${styles.pricingCard} ${styles.featured} glass-strong`}>
-                            <div className={styles.featuredBadge}>Most Popular</div>
-                            <div className={styles.pricingHeader}>
-                                <h4 className={styles.pricingTitle}>Business</h4>
-                                <div className={styles.pricingPrice}>₹49,999</div>
-                                <div className={styles.pricingPeriod}>per month</div>
-                            </div>
-                            <ul className={styles.pricingFeatures}>
-                                <li>Up to 100 devices</li>
-                                <li>All wiping methods</li>
-                                <li>Compliance reporting</li>
-                                <li>Priority support</li>
-                            </ul>
-                            <button className={`${styles.pricingButton} ${styles.featuredButton}`}>
-                                Choose Business
-                            </button>
-                        </div>
-                        
-                        <div className={`${styles.pricingCard} glass`}>
-                            <div className={styles.pricingHeader}>
-                                <h4 className={styles.pricingTitle}>Enterprise</h4>
-                                <div className={styles.pricingPrice}>Custom</div>
-                                <div className={styles.pricingPeriod}>contact us</div>
-                            </div>
-                            <ul className={styles.pricingFeatures}>
-                                <li>Unlimited devices</li>
-                                <li>Custom solutions</li>
-                                <li>Dedicated support</li>
-                                <li>On-site services</li>
-                            </ul>
-                            <button className={styles.pricingButton}>Contact Sales</button>
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </section>
     );

@@ -1,5 +1,8 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import { SectionHeader, Grid, Card } from "../../shared";
+import { BenefitCard, TimelineItem } from "./components";
+import { rustBenefits, roadmapData } from "../../../utils/data";
 import styles from "./Technology.module.css";
 
 function Technology() {
@@ -27,7 +30,20 @@ function Technology() {
                 stagger: 0.15,
                 ease: "back.out(1.7)",
                 scrollTrigger: {
-                    trigger: `.${styles.rustBenefits}`,
+                    trigger: `.${styles.rustSection}`,
+                    start: "top 80%",
+                    toggleActions: "play none none reverse"
+                }
+            });
+
+            gsap.from(`.${styles.archCard}`, {
+                opacity: 0,
+                y: 40,
+                duration: 0.6,
+                stagger: 0.15,
+                ease: "back.out(1.7)",
+                scrollTrigger: {
+                    trigger: `.${styles.architectureSection}`,
                     start: "top 80%",
                     toggleActions: "play none none reverse"
                 }
@@ -37,35 +53,80 @@ function Technology() {
         return () => ctx.revert();
     }, []);
 
+    const architectureData = [
+        {
+            icon: "🔧",
+            title: "Bootloader Layer",
+            description: "Custom UEFI/BIOS bootloader written in Rust that initializes hardware and loads the WIPER OS kernel directly from USB.",
+            features: ["UEFI & Legacy BIOS support", "Secure boot integration", "Hardware detection"]
+        },
+        {
+            icon: "⚙️",
+            title: "Kernel Layer",
+            description: "Minimal kernel providing hardware abstraction, memory management, and device drivers for storage controllers and interfaces.",
+            features: ["Memory-safe drivers", "Hardware abstraction", "Interrupt handling"]
+        },
+        {
+            icon: "🔒",
+            title: "Wiping Engine",
+            description: "High-performance data destruction engine implementing multiple algorithms with parallel processing and hardware acceleration.",
+            features: ["Multi-threaded processing", "Hardware acceleration", "Algorithm selection"]
+        },
+        {
+            icon: "📊",
+            title: "Reporting Layer",
+            description: "Comprehensive logging and reporting system generating compliance certificates and audit trails for regulatory requirements.",
+            features: ["Real-time logging", "Certificate generation", "Audit trail creation"]
+        }
+    ];
+
+    const algorithmData = [
+        {
+            title: "DoD 5220.22-M (3-pass)",
+            patterns: ["Pass 1: 0x00", "Pass 2: 0xFF", "Pass 3: Random"],
+            description: "Standard US Department of Defense wiping method suitable for most commercial and government applications."
+        },
+        {
+            title: "Gutmann Method (35-pass)",
+            patterns: ["Passes 1-4: Random", "Passes 5-31: Specific patterns", "Passes 32-35: Random"],
+            description: "Most comprehensive wiping method designed to defeat advanced forensic recovery techniques."
+        },
+        {
+            title: "NIST SP 800-88 (1-pass)",
+            patterns: ["Pass 1: Cryptographic erase", "+ Hardware secure erase", "+ Verification"],
+            description: "Modern approach using cryptographic erasure combined with hardware secure erase commands for SSDs."
+        }
+    ];
+
+    const benchmarkData = [
+        { title: "Traditional HDD", value: "150 GB/hour", subtext: "7200 RPM SATA Drive" },
+        { title: "SATA SSD", value: "500 GB/hour", subtext: "Standard SATA III Interface" },
+        { title: "NVMe SSD", value: "2 TB/hour", subtext: "PCIe 4.0 Interface" },
+        { title: "Enterprise Array", value: "10 TB/hour", subtext: "Parallel Processing" }
+    ];
+
     return (
         <section id="technology" className={`${styles.technology} section`} ref={sectionRef}>
             <div className="container">
-                <div className={styles.technologyHeader}>
-                    <h2 className={styles.sectionTitle}>Technology</h2>
-                    <p className={styles.sectionSubtitle}>
-                        State-of-the-art Rust-powered bootable drive solution
-                    </p>
-                </div>
+                <SectionHeader 
+                    title="Technology"
+                    subtitle="State-of-the-art Rust-powered bootable drive solution"
+                />
 
                 <div className={styles.heroSection}>
-                    <div className={`${styles.heroCard} glass-strong`}>
+                    <Card className={styles.heroCard} variant="glassStrong">
                         <h3 className={styles.heroTitle}>WIPER OS</h3>
-                        <p className={styles.heroSubtitle}>
-                            Revolutionary Rust-Based Bootable Solution
-                        </p>
+                        <p className={styles.heroSubtitle}>Revolutionary Rust-Based Bootable Solution</p>
                         <p className={styles.heroDescription}>
-                            We're developing a cutting-edge bootable drive
-                            powered by Rust that can securely wipe any storage
-                            device, regardless of the operating system or file
-                            system. Our solution boots directly from USB,
-                            bypassing all software protections and accessing
-                            hardware at the lowest level.
+                            We're developing a cutting-edge bootable drive powered by Rust that can securely wipe any storage
+                            device, regardless of the operating system or file system. Our solution boots directly from USB,
+                            bypassing all software protections and accessing hardware at the lowest level.
                         </p>
                         <div className={styles.statusBadge}>
                             <span className={styles.statusDot}></span>
                             In Active Development - Beta Q2 2025
                         </div>
-                    </div>
+                    </Card>
                 </div>
 
                 <div className={styles.rustSection}>
@@ -77,136 +138,74 @@ function Technology() {
                             capabilities makes it ideal for data destruction tools that must be both fast and secure.
                         </p>
                     </div>
-                    <div className={styles.rustBenefits}>
-                        <div className={`${styles.benefitCard} glass`}>
-                            <div className={styles.benefitIcon}>⚡</div>
-                            <h4 className={styles.benefitTitle}>Zero-Cost Abstractions</h4>
-                            <p className={styles.benefitText}>
-                                Rust's zero-cost abstractions mean high-level code compiles to the same 
-                                assembly as hand-optimized C, crucial for maximum performance in data wiping algorithms.
-                            </p>
-                            <div className={styles.benefitDetails}>
-                                <span>• No runtime overhead</span>
-                                <span>• Compile-time optimizations</span>
-                                <span>• Predictable performance</span>
-                            </div>
-                        </div>
-                        <div className={`${styles.benefitCard} glass`}>
-                            <div className={styles.benefitIcon}>🛡️</div>
-                            <h4 className={styles.benefitTitle}>Memory Safety Without GC</h4>
-                            <p className={styles.benefitText}>
-                                Prevents buffer overflows, use-after-free, and memory leaks at compile time, 
-                                ensuring the wiping process cannot be compromised by memory corruption vulnerabilities.
-                            </p>
-                            <div className={styles.benefitDetails}>
-                                <span>• No garbage collector</span>
-                                <span>• Compile-time guarantees</span>
-                                <span>• Zero memory leaks</span>
-                            </div>
-                        </div>
-                        <div className={`${styles.benefitCard} glass`}>
-                            <div className={styles.benefitIcon}>⚙️</div>
-                            <h4 className={styles.benefitTitle}>Systems Programming</h4>
-                            <p className={styles.benefitText}>
-                                Direct hardware access, inline assembly, and bare-metal programming capabilities 
-                                essential for bootable environments and low-level storage device control.
-                            </p>
-                            <div className={styles.benefitDetails}>
-                                <span>• Direct hardware access</span>
-                                <span>• Inline assembly support</span>
-                                <span>• No runtime dependencies</span>
-                            </div>
-                        </div>
-                        <div className={`${styles.benefitCard} glass`}>
-                            <div className={styles.benefitIcon}>🔄</div>
-                            <h4 className={styles.benefitTitle}>Fearless Concurrency</h4>
-                            <p className={styles.benefitText}>
-                                Rust's ownership system prevents data races at compile time, enabling safe 
-                                parallel wiping of multiple drives with optimal multi-threaded performance.
-                            </p>
-                            <div className={styles.benefitDetails}>
-                                <span>• No data races</span>
-                                <span>• Thread-safe by default</span>
-                                <span>• Efficient parallelism</span>
-                            </div>
-                        </div>
-                        <div className={`${styles.benefitCard} glass`}>
-                            <div className={styles.benefitIcon}>🔒</div>
-                            <h4 className={styles.benefitTitle}>Security by Design</h4>
-                            <p className={styles.benefitText}>
-                                Rust's type system and borrow checker eliminate entire classes of security 
-                                vulnerabilities, critical for tools handling sensitive data destruction.
-                            </p>
-                            <div className={styles.benefitDetails}>
-                                <span>• Type safety</span>
-                                <span>• No null pointer dereferences</span>
-                                <span>• Safe error handling</span>
-                            </div>
-                        </div>
-                        <div className={`${styles.benefitCard} glass`}>
-                            <div className={styles.benefitIcon}>🚀</div>
-                            <h4 className={styles.benefitTitle}>Modern Tooling</h4>
-                            <p className={styles.benefitText}>
-                                Cargo package manager, built-in testing, documentation generation, and 
-                                excellent cross-compilation support streamline development and deployment.
-                            </p>
-                            <div className={styles.benefitDetails}>
-                                <span>• Integrated toolchain</span>
-                                <span>• Cross-compilation</span>
-                                <span>• Rich ecosystem</span>
-                            </div>
-                        </div>
-                    </div>
+                    <Grid minWidth="280px">
+                        {rustBenefits.map((benefit, index) => (
+                            <BenefitCard key={index} {...benefit} />
+                        ))}
+                    </Grid>
+                </div>
+
+
+
+                <div className={styles.architectureSection}>
+                    <h3 className={styles.subsectionTitle}>Technical Architecture</h3>
+                    <Grid minWidth="280px">
+                        {architectureData.map((arch, index) => (
+                            <Card key={index} className={styles.archCard}>
+                                <div className={styles.archIcon}>{arch.icon}</div>
+                                <h4 className={styles.archTitle}>{arch.title}</h4>
+                                <p className={styles.archText}>{arch.description}</p>
+                                <div className={styles.archFeatures}>
+                                    {arch.features.map((feature, idx) => (
+                                        <span key={idx}>• {feature}</span>
+                                    ))}
+                                </div>
+                            </Card>
+                        ))}
+                    </Grid>
+                </div>
+
+                <div className={styles.algorithmsSection}>
+                    <h3 className={styles.subsectionTitle}>Wiping Algorithms</h3>
+                    <Grid minWidth="320px">
+                        {algorithmData.map((algorithm, index) => (
+                            <Card key={index} className={styles.algorithmCard}>
+                                <h4 className={styles.algorithmTitle}>{algorithm.title}</h4>
+                                <div className={styles.algorithmPattern}>
+                                    {algorithm.patterns.map((pattern, idx) => (
+                                        <span key={idx} className={styles.pass}>{pattern}</span>
+                                    ))}
+                                </div>
+                                <p className={styles.algorithmText}>{algorithm.description}</p>
+                            </Card>
+                        ))}
+                    </Grid>
+                </div>
+
+                <div className={styles.performanceSection}>
+                    <h3 className={styles.subsectionTitle}>Performance Benchmarks</h3>
+                    <Grid minWidth="200px">
+                        {benchmarkData.map((benchmark, index) => (
+                            <Card key={index} className={styles.benchmarkCard}>
+                                <div className={styles.benchmarkTitle}>{benchmark.title}</div>
+                                <div className={styles.benchmarkValue}>{benchmark.value}</div>
+                                <div className={styles.benchmarkSubtext}>{benchmark.subtext}</div>
+                            </Card>
+                        ))}
+                    </Grid>
                 </div>
 
                 <div className={styles.roadmapSection}>
                     <h3 className={styles.subsectionTitle}>Development Roadmap</h3>
                     <div className={styles.roadmapTimeline}>
-                        <div className={styles.timelineItem}>
-                            <div className={styles.timelineMarker}></div>
-                            <div className={`${styles.timelineContent} glass`}>
-                                <h4 className={styles.timelineTitle}>Q1 2025 - Core Engine</h4>
-                                <p className={styles.timelineText}>
-                                    Complete bootloader and basic wiping algorithms. Support for 
-                                    SATA and NVMe drives with standard wiping patterns.
-                                </p>
-                            </div>
-                        </div>
-                        <div className={styles.timelineItem}>
-                            <div className={styles.timelineMarker}></div>
-                            <div className={`${styles.timelineContent} glass`}>
-                                <h4 className={styles.timelineTitle}>Q2 2025 - Beta Release</h4>
-                                <p className={styles.timelineText}>
-                                    Public beta with GUI interface, network reporting, and 
-                                    compliance certification features.
-                                </p>
-                            </div>
-                        </div>
-                        <div className={styles.timelineItem}>
-                            <div className={styles.timelineMarker}></div>
-                            <div className={`${styles.timelineContent} glass`}>
-                                <h4 className={styles.timelineTitle}>Q3 2025 - Enterprise Features</h4>
-                                <p className={styles.timelineText}>
-                                    Advanced features like selective wiping, batch processing, 
-                                    and enterprise management integration.
-                                </p>
-                            </div>
-                        </div>
-                        <div className={styles.timelineItem}>
-                            <div className={styles.timelineMarker}></div>
-                            <div className={`${styles.timelineContent} glass`}>
-                                <h4 className={styles.timelineTitle}>Q4 2025 - Full Release</h4>
-                                <p className={styles.timelineText}>
-                                    Production-ready release with full certification, 24/7 support, 
-                                    and global deployment capabilities.
-                                </p>
-                            </div>
-                        </div>
+                        {roadmapData.map((item, index) => (
+                            <TimelineItem key={index} {...item} />
+                        ))}
                     </div>
                 </div>
 
                 <div className={styles.ctaSection}>
-                    <div className={`${styles.ctaCard} glass-strong`}>
+                    <Card className={styles.ctaCard} variant="glassStrong">
                         <h3 className={styles.ctaTitle}>Join Our Beta Program</h3>
                         <p className={styles.ctaText}>
                             Be among the first to experience the future of secure data destruction. 
@@ -214,7 +213,7 @@ function Technology() {
                             the development process.
                         </p>
                         <button className={styles.ctaButton}>Request Beta Access</button>
-                    </div>
+                    </Card>
                 </div>
             </div>
         </section>

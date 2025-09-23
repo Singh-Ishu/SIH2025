@@ -1,0 +1,36 @@
+.card {
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.glass {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: var(--glass-backdrop);
+}
+
+.glassStrong {
+    background: var(--glass-bg-strong);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: var(--glass-backdrop);
+}
+
+.solid {
+    background: var(--color-bg-secondary);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.hover:hover.glass {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.hover:hover.glassStrong {
+    background: rgba(255, 255, 255, 0.12);
+}

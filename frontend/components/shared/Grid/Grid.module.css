@@ -1,0 +1,32 @@
+.grid {
+    display: grid;
+}
+
+.gap-sm {
+    gap: var(--spacing-md);
+}
+
+.gap-md {
+    gap: var(--spacing-lg);
+}
+
+.gap-lg {
+    gap: var(--spacing-lg);
+}
+
+.gap-xl {
+    gap: var(--spacing-xl);
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .gap-sm,
+    .gap-md,
+    .gap-lg,
+    .gap-xl {
+        gap: var(--spacing-md);
+    }
+}

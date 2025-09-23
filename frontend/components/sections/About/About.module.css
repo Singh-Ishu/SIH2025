@@ -322,21 +322,224 @@
     font-size: 0.8rem;
 }
 
+/* Industry Applications Section */
+.industrySection {
+    margin-bottom: var(--spacing-3xl);
+}
+
+.industryGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.industryCard {
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.industryCard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+    transform: scaleX(0);
+    transition: transform var(--transition-normal);
+}
+
+.industryCard:hover::before {
+    transform: scaleX(1);
+}
+
+.industryCard:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+}
+
+.industryIcon {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-md);
+    filter: grayscale(1) brightness(0) invert(1);
+    opacity: 0.8;
+    transition: all var(--transition-normal);
+}
+
+.industryCard:hover .industryIcon {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.industryTitle {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.industryText {
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-md);
+}
+
+.industryStats {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.industryStats span {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    font-family: var(--font-mono);
+}
+
+.industryStats span:last-child {
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+/* Certifications Section */
+.certificationsSection {
+    margin-bottom: var(--spacing-3xl);
+}
+
+.certificationsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.certCard {
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.certCard::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(0, 255, 136, 0.1), transparent);
+    transform: rotate(45deg);
+    transition: all var(--transition-slow);
+    opacity: 0;
+}
+
+.certCard:hover::after {
+    opacity: 1;
+    animation: shimmer 1.5s ease-in-out;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}
+
+.certCard:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.certBadge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+    color: var(--color-bg-primary);
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--radius-full);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: var(--spacing-md);
+}
+
+.certTitle {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.certText {
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+}
+
+/* Team Section */
 .teamSection {
     text-align: center;
 }
 
-.teamContent {
-    padding: var(--spacing-xl);
-    border-radius: var(--radius-lg);
-    max-width: 800px;
-    margin: 0 auto;
+.teamGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
 }
 
-.teamText {
-    font-size: clamp(1rem, 2vw, 1.2rem);
+.teamMember {
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    transition: all var(--transition-normal);
+    position: relative;
+}
+
+.teamMember:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+}
+
+.memberAvatar {
+    font-size: 4rem;
+    margin-bottom: var(--spacing-md);
+    filter: grayscale(1) brightness(0) invert(1);
+    opacity: 0.8;
+    transition: all var(--transition-normal);
+}
+
+.teamMember:hover .memberAvatar {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.memberName {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.memberRole {
+    font-size: 1rem;
+    color: var(--color-primary);
+    font-weight: 600;
+    margin-bottom: var(--spacing-md);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.memberBio {
+    font-size: 0.95rem;
     color: var(--color-text-secondary);
-    line-height: 1.7;
+    line-height: 1.6;
 }
 
 @media (max-width: 768px) {
@@ -355,10 +558,27 @@
         gap: var(--spacing-md);
     }
     
+    .industryGrid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
+    .certificationsGrid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
+    .teamGrid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
     .statCard,
     .featureCard,
     .marketCard,
-    .teamContent {
+    .industryCard,
+    .certCard,
+    .teamMember {
         padding: var(--spacing-lg);
     }
     

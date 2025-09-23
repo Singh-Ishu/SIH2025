@@ -1,0 +1,42 @@
+.timelineItem {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: var(--spacing-xl);
+    position: relative;
+}
+
+.marker {
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+    border-radius: 50%;
+    margin-right: var(--spacing-lg);
+    margin-top: var(--spacing-sm);
+    position: relative;
+    z-index: 2;
+    flex-shrink: 0;
+}
+
+.content {
+    flex: 1;
+    padding: var(--spacing-lg);
+    transition: all var(--transition-normal);
+}
+
+.content:hover {
+    transform: translateX(10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.text {
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+}

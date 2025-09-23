@@ -1,5 +1,8 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import { SectionHeader, Grid, Card } from "../../shared";
+import { ContactMethod, FAQCard } from "./components";
+import { contactMethods, faqData } from "../../../utils/data";
 import styles from "./Contact.module.css";
 
 function Contact() {
@@ -39,12 +42,10 @@ function Contact() {
     return (
         <section id="contact" className={`${styles.contact} section`} ref={sectionRef}>
             <div className="container">
-                <div className={styles.contactHeader}>
-                    <h2 className={styles.sectionTitle}>Contact Us</h2>
-                    <p className={styles.sectionSubtitle}>
-                        Get in touch for secure data destruction solutions
-                    </p>
-                </div>
+                <SectionHeader 
+                    title="Contact Us"
+                    subtitle="Get in touch for secure data destruction solutions"
+                />
 
                 <div className={styles.contactGrid}>
                     <div className={styles.contactInfo}>
@@ -55,48 +56,13 @@ function Contact() {
                         </p>
                         
                         <div className={styles.contactMethods}>
-                            <div className={`${styles.contactMethod} glass`}>
-                                <div className={styles.methodIcon}>📧</div>
-                                <div className={styles.methodDetails}>
-                                    <h4 className={styles.methodTitle}>Email</h4>
-                                    <p className={styles.methodText}>contact@wiper.tech</p>
-                                    <p className={styles.methodSubtext}>Response within 24 hours</p>
-                                </div>
-                            </div>
-                            
-                            <div className={`${styles.contactMethod} glass`}>
-                                <div className={styles.methodIcon}>📞</div>
-                                <div className={styles.methodDetails}>
-                                    <h4 className={styles.methodTitle}>Phone</h4>
-                                    <p className={styles.methodText}>+91 98765 43210</p>
-                                    <p className={styles.methodSubtext}>Mon-Fri, 9 AM - 6 PM IST</p>
-                                </div>
-                            </div>
-                            
-                            <div className={`${styles.contactMethod} glass`}>
-                                <div className={styles.methodIcon}>🏢</div>
-                                <div className={styles.methodDetails}>
-                                    <h4 className={styles.methodTitle}>Office</h4>
-                                    <p className={styles.methodText}>
-                                        Cyber City, Gurugram<br />
-                                        Haryana, India 122002
-                                    </p>
-                                    <p className={styles.methodSubtext}>By appointment only</p>
-                                </div>
-                            </div>
-                            
-                            <div className={`${styles.contactMethod} glass`}>
-                                <div className={styles.methodIcon}>🚨</div>
-                                <div className={styles.methodDetails}>
-                                    <h4 className={styles.methodTitle}>Emergency</h4>
-                                    <p className={styles.methodText}>+91 99999 00000</p>
-                                    <p className={styles.methodSubtext}>24/7 Critical Data Breaches</p>
-                                </div>
-                            </div>
+                            {contactMethods.map((method, index) => (
+                                <ContactMethod key={index} {...method} />
+                            ))}
                         </div>
                     </div>
                     
-                    <div className={`${styles.contactForm} glass-strong`}>
+                    <Card className={styles.contactForm} variant="glassStrong">
                         <h3 className={styles.formTitle}>Send Us a Message</h3>
                         <form className={styles.form}>
                             <div className={styles.formRow}>
@@ -164,7 +130,41 @@ function Contact() {
                                 Send Message
                             </button>
                         </form>
-                    </div>
+                    </Card>
+                </div>
+
+                <div className={styles.faqSection}>
+                    <h3 className={styles.faqTitle}>Frequently Asked Questions</h3>
+                    <Grid minWidth="350px">
+                        {faqData.map((faq, index) => (
+                            <FAQCard key={index} {...faq} />
+                        ))}
+                    </Grid>
+                </div>
+
+                <div className={styles.supportSection}>
+                    <Card className={styles.supportCard} variant="glassStrong">
+                        <h3 className={styles.supportTitle}>24/7 Emergency Support</h3>
+                        <p className={styles.supportText}>
+                            Data breaches don't wait for business hours. Our emergency response team 
+                            is available 24/7 to help with critical data destruction needs.
+                        </p>
+                        <div className={styles.supportFeatures}>
+                            <div className={styles.supportFeature}>
+                                <span className={styles.supportIcon}>⚡</span>
+                                <span>Immediate response within 1 hour</span>
+                            </div>
+                            <div className={styles.supportFeature}>
+                                <span className={styles.supportIcon}>🚁</span>
+                                <span>On-site deployment within 4 hours</span>
+                            </div>
+                            <div className={styles.supportFeature}>
+                                <span className={styles.supportIcon}>🔒</span>
+                                <span>Secure chain of custody protocols</span>
+                            </div>
+                        </div>
+                        <button className={styles.emergencyButton}>Call Emergency Hotline</button>
+                    </Card>
                 </div>
             </div>
         </section>

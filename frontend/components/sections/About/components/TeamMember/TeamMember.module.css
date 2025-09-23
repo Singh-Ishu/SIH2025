@@ -1,0 +1,39 @@
+.teamMember {
+    padding: var(--spacing-xl);
+    text-align: center;
+}
+
+.avatar {
+    font-size: 4rem;
+    margin-bottom: var(--spacing-md);
+    filter: grayscale(1) brightness(0) invert(1);
+    opacity: 0.8;
+    transition: all var(--transition-normal);
+}
+
+.teamMember:hover .avatar {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.name {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.role {
+    font-size: 1rem;
+    color: var(--color-primary);
+    font-weight: 600;
+    margin-bottom: var(--spacing-md);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.bio {
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+}

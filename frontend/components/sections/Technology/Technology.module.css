@@ -263,6 +263,224 @@
     line-height: 1.6;
 }
 
+/* Architecture Section */
+.architectureSection {
+    margin-bottom: var(--spacing-3xl);
+}
+
+.architectureGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.archCard {
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.archCard::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(0, 204, 255, 0.1), transparent);
+    transform: rotate(45deg);
+    transition: all var(--transition-slow);
+    opacity: 0;
+}
+
+.archCard:hover::after {
+    opacity: 1;
+    animation: shimmer 1.5s ease-in-out;
+}
+
+.archCard:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+}
+
+.archIcon {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-md);
+    filter: grayscale(1) brightness(0) invert(1);
+    opacity: 0.8;
+    transition: all var(--transition-normal);
+}
+
+.archCard:hover .archIcon {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.archTitle {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.archText {
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-md);
+}
+
+.archFeatures {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.archFeatures span {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    text-align: left;
+}
+
+/* Algorithms Section */
+.algorithmsSection {
+    margin-bottom: var(--spacing-3xl);
+}
+
+.algorithmsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.algorithmCard {
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.algorithmCard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-accent), var(--color-primary));
+    transform: scaleX(0);
+    transition: transform var(--transition-normal);
+}
+
+.algorithmCard:hover::before {
+    transform: scaleX(1);
+}
+
+.algorithmCard:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+}
+
+.algorithmTitle {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-md);
+    font-family: var(--font-mono);
+}
+
+.algorithmPattern {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-md);
+    padding: var(--spacing-md);
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: var(--radius-sm);
+    border-left: 3px solid var(--color-accent);
+}
+
+.pass {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    font-family: var(--font-mono);
+}
+
+.algorithmText {
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+}
+
+/* Performance Section */
+.performanceSection {
+    margin-bottom: var(--spacing-3xl);
+}
+
+.benchmarkGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.benchmarkCard {
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.benchmarkCard::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+    transform: scaleX(0);
+    transition: transform var(--transition-normal);
+}
+
+.benchmarkCard:hover::before {
+    transform: scaleX(1);
+}
+
+.benchmarkCard:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.benchmarkTitle {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-md);
+}
+
+.benchmarkValue {
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    font-weight: 900;
+    font-family: var(--font-mono);
+    background: linear-gradient(135deg, var(--color-accent), var(--color-primary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.2;
+}
+
+.benchmarkSubtext {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+}
+
 .ctaSection {
     text-align: center;
 }
@@ -313,6 +531,21 @@
         gap: var(--spacing-md);
     }
     
+    .architectureGrid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
+    .algorithmsGrid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
+    .benchmarkGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-md);
+    }
+    
     .roadmapTimeline::before {
         left: 15px;
     }
@@ -328,7 +561,20 @@
     }
     
     .heroCard,
-    .ctaCard {
-        padding: var(--spacing-xl);
+    .ctaCard,
+    .archCard,
+    .algorithmCard,
+    .benchmarkCard {
+        padding: var(--spacing-lg);
+    }
+    
+    .algorithmPattern {
+        padding: var(--spacing-sm);
+    }
+}
+
+@media (max-width: 480px) {
+    .benchmarkGrid {
+        grid-template-columns: 1fr;
     }
 }

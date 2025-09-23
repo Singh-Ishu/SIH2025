@@ -1,0 +1,47 @@
+.benefitCard {
+    padding: var(--spacing-xl);
+    text-align: center;
+}
+
+.icon {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-md);
+    filter: grayscale(1) brightness(0) invert(1);
+    opacity: 0.8;
+}
+
+.title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.text {
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-md);
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.details span {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    padding-left: var(--spacing-sm);
+    position: relative;
+}
+
+.details span::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+    font-weight: bold;
+    font-size: 0.8rem;
+}
