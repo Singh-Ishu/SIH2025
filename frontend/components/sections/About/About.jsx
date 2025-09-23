@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { SectionHeader, Grid } from "../../shared";
 import { IndustryCard, CertificationBadge, TeamMember } from "./components";
@@ -7,50 +7,9 @@ import styles from "./About.module.css";
 
 function About() {
     const sectionRef = useRef(null);
-    const counterRef = useRef(null);
-    const [marketValue, setMarketValue] = useState(0);
 
     useEffect(() => {
         const ctx = gsap.context(() => {
-            gsap.from(`.${styles.statCard}`, {
-                opacity: 0,
-                y: 50,
-                duration: 0.8,
-                stagger: 0.2,
-                ease: "power3.out",
-                scrollTrigger: {
-                    trigger: `.${styles.marketSection}`,
-                    start: "top 70%",
-                    toggleActions: "play none none reverse"
-                }
-            });
-
-            gsap.from(`.${styles.marketCard}`, {
-                opacity: 0,
-                y: 30,
-                duration: 0.6,
-                stagger: 0.1,
-                ease: "power3.out",
-                scrollTrigger: {
-                    trigger: `.${styles.marketCards}`,
-                    start: "top 80%",
-                    toggleActions: "play none none reverse"
-                }
-            });
-
-            gsap.from(`.${styles.featureCard}`, {
-                opacity: 0,
-                scale: 0.9,
-                duration: 0.6,
-                stagger: 0.15,
-                ease: "back.out(1.7)",
-                scrollTrigger: {
-                    trigger: `.${styles.whyWiperSection}`,
-                    start: "top 80%",
-                    toggleActions: "play none none reverse"
-                }
-            });
-
             gsap.from(`.${styles.industryCard}`, {
                 opacity: 0,
                 y: 50,
@@ -58,7 +17,7 @@ function About() {
                 stagger: 0.2,
                 ease: "power3.out",
                 scrollTrigger: {
-                    trigger: `.${styles.industrySection}`,
+                    trigger: sectionRef.current,
                     start: "top 70%",
                     toggleActions: "play none none reverse"
                 }
