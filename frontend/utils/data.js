@@ -65,38 +65,38 @@ export const teamData = [
     {
         avatar: "👨‍💻",
         name: "Ishaan Singh",
-        role: "Team Leader",
-        bio: "15+ years in cybersecurity and systems programming. Former security architect at major tech firms with expertise in low-level data security."
+        role: "Team Leader // Web Developer",
+        bio: "CSE student at VIT Chennai, passionate about full-stack development and cybersecurity."
     },
     {
         avatar: "👩‍💼",
         name: "Niharika G. Khopade",
-        role: "Female Member Zaruri tha",
-        bio: "MBA from IIM with 12+ years in enterprise software. Led multiple successful product launches in the cybersecurity domain."
+        role: "AI Expert",
+        bio: "CSE student at VIT Chennai with expertise in machine learning and AI applications."
     },
     {
         avatar: "👨‍🔬",
         name: "Ashutosh Mittal",
         role: "Head of Research",
-        bio: "PhD in Computer Science specializing in cryptography and data security. Published researcher with 20+ papers in top-tier security conferences."
+        bio: "CSE student at VIT Chennai specializing in cryptography and data security research."
     },
     {
         avatar: "👩‍💻",
         name: "Viju",
         role: "Lead Rust Developer",
-        bio: "Systems programming expert with deep knowledge of Rust, bootloader development, and hardware-level programming for secure applications."
+        bio: "CSE student at VIT Chennai with strong systems programming skills in Rust."
     },
     {
         avatar: "👩‍💻",
         name: "Ayushman",
         role: "Lead Rust Developer",
-        bio: "Systems programming expert with deep knowledge of Rust, bootloader development, and hardware-level programming for secure applications."
+        bio: "CSE student at VIT Chennai, active in competitive programming and low-level development."
     },
     {
         avatar: "👩‍💻",
         name: "Rachit Gupta",
-        role: "Ex-Tau",
-        bio: "Systems programming expert with deep knowledge of Rust, bootloader development, and hardware-level programming for secure applications."
+        role: "Security Consultant",
+        bio: "CSE student at VIT Chennai with experience in ethical hacking and digital forensics."
     },
 ];
 
