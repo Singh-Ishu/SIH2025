@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { SectionHeader, Grid } from "../../shared";
-import { IndustryCard, CertificationBadge, TeamMember } from "./components";
+import { IndustryCard, CertificationBadge, TeamMember, MarketSizeCounter } from "./components";
 import { industryData, certificationData, teamData } from "../../../utils/data";
 import styles from "./About.module.css";
 
@@ -74,11 +74,10 @@ function About() {
 
                 <div className={styles.marketSection}>
                     <h3 className={styles.subsectionTitle}>Market Opportunities in India</h3>
+
+                    <MarketSizeCounter />
+
                     <div className={styles.statsGrid}>
-                        <div className={`${styles.statCard} glass`}>
-                            <div className={styles.statNumber}>₹2,400 Cr</div>
-                            <div className={styles.statLabel}>Current Market Size</div>
-                        </div>
                         <div className={`${styles.statCard} glass`}>
                             <div className={styles.statNumber}>45%</div>
                             <div className={styles.statLabel}>Annual Growth Rate</div>
